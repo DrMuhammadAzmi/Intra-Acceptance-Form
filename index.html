@@ -30,7 +30,7 @@
                 box-shadow: none !important;
                 
                 /* CRITICAL: Reduce print scale to guarantee 1-page fit with large margins */
-                zoom: 1; 
+                zoom: 0.9; 
             }
             
             /* Fallback scaling for Firefox */
@@ -96,6 +96,8 @@
             select {
                 appearance: none;
                 background-color: transparent !important;
+            }
+            select:not(.inline-input) {
                 border: none !important;
             }
         }
@@ -165,7 +167,21 @@
             </div>
             <div class="flex items-center gap-2">
                 <span class="w-28 font-medium">Program</span>:
-                <input type="text" class="inline-input w-80 print:w-auto flex-1" placeholder="Course Name">
+                <select class="inline-input w-80 print:w-auto flex-1 text-gray-400" onchange="this.classList.remove('text-gray-400'); this.classList.add('text-gray-900')">
+                    <option value="" disabled selected>Select Program</option>
+                    <option value="Diploma in Industrial Logistics">Diploma in Industrial Logistics</option>
+                    <option value="Diploma in Quality Engineering">Diploma in Quality Engineering</option>
+                    <option value="Bachelor of Engineering Technology (Hons) in Instrumentation and Control Engineering">Bachelor of Engineering Technology (Hons) in Instrumentation and Control Engineering</option>
+                    <option value="Bachelor of Engineering Technology (Hons) in Facilities Maintenance Engineering">Bachelor of Engineering Technology (Hons) in Facilities Maintenance Engineering</option>
+                    <option value="Bachelor of Industrial Logistics (Hons)">Bachelor of Industrial Logistics (Hons)</option>
+                    <option value="Bachelor of Engineering Technology (Hons) in Quality Engineering">Bachelor of Engineering Technology (Hons) in Quality Engineering</option>
+                    <option value="Bachelor of Engineering Technology (Hons) in Petroleum Engineering Technology (Operation and Safety)">Bachelor of Engineering Technology (Hons) in Petroleum Engineering Technology (Operation and Safety)</option>
+                    <option value="Master of Quality Engineering Management (MQEM)">Master of Quality Engineering Management (MQEM)</option>
+                    <option value="Master of Supply Chain Management (MSCM)">Master of Supply Chain Management (MSCM)</option>
+                    <option value="Master of Quality Engineering Management (MQEM) – Online Learning">Master of Quality Engineering Management (MQEM) – Online Learning</option>
+                    <option value="Master of Supply Chain Management (MSCM) – Online Learning">Master of Supply Chain Management (MSCM) – Online Learning</option>
+                    <option value="PhD in Education">PhD in Education</option>
+                </select>
             </div>
         </div>
 
@@ -281,7 +297,7 @@
             </p>
             <div class="p-3 print:p-1.5 bg-gray-50 border border-gray-200 print:bg-transparent print:border-black rounded text-center">
                 <p class="mb-1 print:mb-0.5">
-                    Please email this completed form to <strong>Dr. Farah Hafizah</strong> (nurfarahhafizah@unikl.edu.my, 012-732 4126) or <strong>Dr. Ainul Hakimah</strong> (ainulhakimah.karim@unikl.edu.my, 011-3522 5530) at UniKL MITEC no later than <input type="date" id="replyDate" class="inline-input no-border w-28 print:w-24">.
+                    Please email this completed form to <strong>Dr. Farah Hafizah</strong> (nurfarahhafizah@unikl.edu.my) or <strong>Dr. Ainul Hakimah</strong> (ainulhakimah.karim@unikl.edu.my) at UniKL MITEC no later than <input type="date" id="replyDate" class="inline-input no-border w-28 print:w-24">.
                 </p>
                 <p class="font-medium">Thank you for your continued cooperation and support.</p>
             </div>
