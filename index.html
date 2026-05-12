@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniKL MITEC Acceptance Form Generator</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Custom print adjustments */
+    @media print {
+      @page { margin: 0; }
+      body { margin: 0; background-color: white; }
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-200 py-8 print:py-0 print:bg-white flex flex-col items-center">
+
+  <!-- Controls / Header (Hidden on Print) -->
+  <div class="w-full max-w-[210mm] mb-6 flex flex-col sm:flex-row justify-between items-center print:hidden bg-white p-4 rounded-lg shadow-sm gap-4">
+    <div>
+      <h1 class="text-lg font-bold text-gray-800">Online Form Generator</h1>
+      <p class="text-sm text-gray-500 mb-2">Edit the fields directly in the document below.</p>
+      <a 
+        href="https://drmuhammadazmi.github.io" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-1.5 text-xs font-medium text-gray-600 hover:text-gray-900 bg-gray-100 hover:bg-gray-200 px-2.5 py-1.5 rounded transition-colors"
+      >
+        <i data-lucide="github" class="w-3.5 h-3.5"></i>
+        <span>Check out my other works</span>
+      </a>
+    </div>
+    <button 
+      id="printBtn"
+      class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-md shadow flex items-center gap-2 font-medium transition-colors"
+    >
+      <i data-lucide="printer" class="w-[18px] h-[18px]"></i>
+      <span>Save as PDF / Print</span>
+    </button>
+  </div>
+
+  <!-- A4 Document Container -->
+  <div class="w-[210mm] min-h-[297mm] bg-white p-12 shadow-2xl print:shadow-none print:w-full print:h-full print:p-8 relative text-gray-900 font-sans">
+    
+    <!-- Header Section -->
+    <div class="flex justify-between items-start mb-8">
+      <!-- 
+        IMPORTANT LOGO FIX: 
+        If hosting on GitHub Pages, download the logo, name it 'unikl-logo.png', 
+        put it in the same folder as this index.html, and change the src below to: src="./unikl-logo.png" 
+      -->
+      <img 
+        src="https://upload.wikimedia.org/wikipedia/en/e/e0/Universiti_Kuala_Lumpur_logo.svg" 
+        alt="Universiti Kuala Lumpur Logo" 
+        class="h-20 object-contain print:h-20"
+        onerror="this.onerror=null; this.src='https://via.placeholder.com/200x80?text=UniKL+Logo';"
+      />
+      <div class="text-right flex flex-col items-end">
+        <h2 class="text-xl font-bold uppercase underline mb-1">Acceptance Form</h2>
+        <p class="text-sm font-semibold">UNIVERSITI KUALA LUMPUR</p>
+        <p class="text-sm font-semibold">MALAYSIAN INSTITUTE OF INDUSTRIAL TECHNOLOGY</p>
+        <p class="text-sm font-semibold">INDUSTRIAL TRAINING UNIT</p>
+      </div>
+    </div>
+
+    <!-- Introduction Paragraph -->
+    <div class="mb-6 text-sm leading-loose">
+      <p>
+       <span class="font-semibold">To: Universiti Kuala Lumpur Malaysian Institute of Industrial Technology (UniKL MITEC),</span> <br/>
+        We have received an internship placement request for the following student:
+      </p>
+    </div>
+
+    <!-- Student Details -->
+    <div class="mb-4 text-sm">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="w-28 font-medium">Student Name</span>:
+        <input type="text" placeholder="Enter Student Name" class="font-semibold text-gray-900 placeholder-gray-400 bg-blue-50/50 border-b border-gray-400 px-1 py-0.5 focus:outline-none focus:bg-blue-100 focus:border-blue-600 print:bg-transparent print:border-black print:border-b print:[&::-webkit-calendar-picker-indicator]:hidden w-80" />
+      </div>
+      <div class="flex items-center gap-2 mb-2">
+        <span class="w-28 font-medium">Student ID</span>:
+        <input type="text" placeholder="Enter Student ID" class="font-semibold text-gray-900 placeholder-gray-400 bg-blue-50/50 border-b border-gray-400 px-1 py-0.5 focus:outline-none focus:bg-blue-100 focus:border-blue-600 print:bg-transparent print:border-black print:border-b print:[&::-webkit-calendar-picker-indicator]:hidden w-80" />
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="w-28 font-medium">Program</span>:
+        <input type="text" placeholder="Enter Program Name" class="font-semibold text-gray-900 placeholder-gray-400 bg-blue-50/50 border-b border-gray-400 px-1 py-0.5 focus:outline-none focus:bg-blue-100 focus:border-blue-600 print:bg-transparent print:border-black print:border-b print:[&::-webkit-calendar-picker-indicator]:hidden w-80" />
+      </div>
+    </div>
+
+    <!-- Industrial Training Session -->
+    <div class="mb-8 text-sm leading-loose">
+      <p>
+        Industrial Training Session 
+        <select class="font-semibold text-gray-900 bg-blue-50/50 border-b border-gray-400 px-1 py-0.5 focus:outline-none focus:bg-blue-100 print:appearance-none print:bg-transparent print:border-black print:border-b mx-1">
+          <option value="" disabled selected>Month</option>
+          <option value="MARCH">MARCH</option>
+          <option value="JULY">JULY</option>
+          <option value="OCTOBER">OCTOBER</option>
+        </select>
+        <select class="font-semibold text-gray-900 bg-blue-50/50 border-b border-gray-400 px-1 py-0.5 focus:outline-none focus:bg-blue-100 print:appearance-none print:bg-transparent print:border-black print:border-b mr-1">
+          <option value="" disabled selected>Year</option>
+          <option value="2026">2026</option>
+          <option value="2027">2027</option>
+          <option value="2028">2028</option>
+        </select>
+         from 
+        <input id="startDate" type="date" class="font-semibold text-gray-900 placeholder-gray-400 bg-blue-50/50 border-b border-gray-400 px-1 py-0.5 focus:outline-none focus:bg-blue-100 focus:border-blue-600 print:bg-transparent print:border-black print:border-b print:[&::-webkit-calendar-picker-indicator]:hidden w-36" />
+         until 
+        <input type="date" class="font-semibold text-gray-900 placeholder-gray-400 bg-blue-50/50 border-b border-gray-400 px-1 py-0.5 focus:outline-none focus:bg-blue-100 focus:border-blue-600 print:bg-transparent print:border-black print:border-b print:[&::-webkit-calendar-picker-indicator]:hidden w-36" />
+        .
+      </p>
+    </div>
+
+    <!-- Company Section -->
+    <div class="border-t-2 border-black pt-4 mb-8">
+      <h3 class="font-bold underline mb-4 text-sm">To be filled in by the Company</h3>
+      
+      <div class="grid grid-cols-12 gap-6">
+        
+        <!-- Left Column: Details -->
+        <div class="col-span-8 flex flex-col gap-4 text-sm">
+          <div class="flex flex-col gap-1">
+            <label class="font-medium">Company Name / Address:</label>
+            <input 
+              class="font-bold text-gray-900 placeholder-gray-400 bg-blue-50/50 border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500 print:bg-transparent print:border-none print:px-0 print:py-0 w-full"
+              placeholder="Enter Company Name"
+            />
+            <textarea
+              class="font-medium text-gray-800 placeholder-gray-400 bg-blue-50/50 border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500 print:bg-transparent print:border-none print:px-0 print:py-0 w-full resize-none h-20"
+              placeholder="Enter Company Address"
+            ></textarea>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="flex flex-col gap-1">
+              <label class="font-medium">Telephone Number:</label>
+              <input 
+                type="text" 
+                class="font-semibold text-gray-900 placeholder-gray-400 bg-blue-50/50 border-b border-gray-400 px-1 py-0.5 focus:outline-none focus:bg-blue-100 print:bg-transparent print:border-black"
+                placeholder="Enter Phone Number"
+              />
+            </div>
+            <div class="flex flex-col gap-1">
+              <label class="font-medium">Fax Number:</label>
+              <input 
+                type="text" 
+                class="font-semibold text-gray-900 placeholder-gray-400 bg-blue-50/50 border-b border-gray-400 px-1 py-0.5 focus:outline-none focus:bg-blue-100 print:bg-transparent print:border-black"
+                placeholder="Enter Fax Number"
+              />
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-1 mt-2">
+            <label class="font-medium">Contact Person:</label>
+            <input 
+              type="text" 
+              class="font-semibold text-gray-900 placeholder-gray-400 bg-blue-50/50 border-b border-gray-400 px-1 py-0.5 focus:outline-none focus:bg-blue-100 print:bg-transparent print:border-black"
+              placeholder="Enter Contact Person"
+            />
+          </div>
+
+          <div class="grid grid-cols-2 gap-4 mt-2">
+            <div class="flex flex-col gap-1">
+              <label class="font-medium">Designation:</label>
+              <input 
+                type="text" 
+                class="font-semibold text-gray-900 placeholder-gray-400 bg-blue-50/50 border-b border-gray-400 px-1 py-0.5 focus:outline-none focus:bg-blue-100 print:bg-transparent print:border-black"
+                placeholder="Enter Designation"
+              />
+            </div>
+            <div class="flex flex-col gap-1">
+              <label class="font-medium">Email:</label>
+              <input 
+                type="email" 
+                class="font-semibold text-gray-900 placeholder-gray-400 bg-blue-50/50 border-b border-gray-400 px-1 py-0.5 focus:outline-none focus:bg-blue-100 print:bg-transparent print:border-black"
+                placeholder="Enter Email Address"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Stamp -->
+        <div class="col-span-4 flex flex-col">
+          <label class="font-medium mb-2 text-sm text-center">Company Official Stamp:</label>
+          <div class="border-2 border-dashed border-gray-400 flex-1 min-h-[150px] flex items-center justify-center print:border-solid print:border-black bg-gray-50 print:bg-transparent relative rounded-sm">
+            <span class="text-gray-300 print:hidden text-xs absolute uppercase font-bold">Stamp Here</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Agreement Section -->
+    <div class="mb-8 text-sm">
+      <p class="font-medium mb-3">Our decision (please tick one):</p>
+      
+      <div class="flex flex-col gap-3 ml-4 mb-4">
+        <label class="flex items-center gap-3 cursor-pointer">
+          <input 
+            type="radio" 
+            name="agreementStatus"
+            value="agreed"
+            class="w-5 h-5 cursor-pointer text-blue-600 bg-white border-gray-400 rounded-sm print:appearance-none print:w-4 print:h-4 print:border print:border-black print:rounded-none print:checked:bg-black"
+          />
+          <span class="font-semibold">We gladly agree to accept this student.</span>
+        </label>
+        <label class="flex items-center gap-3 cursor-pointer">
+          <input 
+            type="radio" 
+            name="agreementStatus"
+            value="apologize"
+            class="w-5 h-5 cursor-pointer text-blue-600 bg-white border-gray-400 rounded-sm print:appearance-none print:w-4 print:h-4 print:border print:border-black print:rounded-none print:checked:bg-black"
+          />
+          <span class="font-semibold">We apologize for being unable to accommodate this request.</span>
+        </label>
+      </div>
+
+      <div class="ml-4 mb-6 flex items-center gap-2">
+        <span class="font-medium">Acceptance Remarks (If Agreed):</span>
+        <input type="text" placeholder="e.g. Department / Specific notes" class="font-semibold text-gray-900 placeholder-gray-400 bg-blue-50/50 border-b border-gray-400 px-1 py-0.5 focus:outline-none focus:bg-blue-100 focus:border-blue-600 print:bg-transparent print:border-black print:border-b print:[&::-webkit-calendar-picker-indicator]:hidden w-96" />
+      </div>
+
+      <div class="ml-4 space-y-2">
+        <p class="font-bold">The student will receive the following facilities:</p>
+        <div class="pl-6 flex flex-col gap-2">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="w-32 font-semibold">Allowance</span>:
+            <span class="font-semibold mx-1">Monthly / Weekly / Daily</span>
+            <span>training allowance of RM __________</span>
+            <input type="text" placeholder="Amount" class="font-semibold text-gray-900 placeholder-gray-400 bg-blue-50/50 border-b border-gray-400 px-1 py-0.5 focus:outline-none focus:bg-blue-100 focus:border-blue-600 print:bg-transparent print:border-black print:border-b print:[&::-webkit-calendar-picker-indicator]:hidden w-20" />
+          </div>
+
+          <div class="flex items-center gap-2">
+            <span class="w-32 font-semibold">Accommodation</span>:
+            <span class="font-semibold mx-1">Will / Will not</span>
+            <span>be provided.</span>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <span class="w-32 font-semibold">Others</span>:
+            <input type="text" placeholder="Specify others" class="font-semibold text-gray-900 placeholder-gray-400 bg-blue-50/50 border-b border-gray-400 px-1 py-0.5 focus:outline-none focus:bg-blue-100 focus:border-blue-600 print:bg-transparent print:border-black print:border-b print:[&::-webkit-calendar-picker-indicator]:hidden w-80" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer / Reminders -->
+    <div class="mt-12 text-sm leading-relaxed text-justify">
+      <p class="mb-4">
+        <span class="font-bold underline">Reminder:</span> The student’s final choice of company must be relevant to his/her programme. Changes to the INTRA placement location are not permitted after acceptance has been completed.
+      </p>
+      <div class="p-4 bg-gray-100 print:bg-transparent print:border-2 print:border-black rounded-md text-center flex flex-col items-center">
+        <p class="mb-2">
+          Please email or fax this completed form to Dr. Farah Hafizah (<input type="text" value="nurfarahhafizah@unikl.edu.my" class="font-semibold text-gray-900 placeholder-gray-400 bg-blue-50/50 border-b border-gray-400 px-1 py-0.5 focus:outline-none focus:bg-blue-100 focus:border-blue-600 print:bg-transparent print:border-black print:border-b print:[&::-webkit-calendar-picker-indicator]:hidden w-48 text-center" />) or Dr. Ainul Hakimah (<input type="text" value="ainulhakimah.karim@unikl.edu.my" class="font-semibold text-gray-900 placeholder-gray-400 bg-blue-50/50 border-b border-gray-400 px-1 py-0.5 focus:outline-none focus:bg-blue-100 focus:border-blue-600 print:bg-transparent print:border-black print:border-b print:[&::-webkit-calendar-picker-indicator]:hidden w-56 text-center" />) at UniKL MITEC no later than 
+          <input id="replyDate" type="date" class="font-semibold text-gray-900 placeholder-gray-400 bg-blue-50/50 border-b border-gray-400 px-1 py-0.5 focus:outline-none focus:bg-blue-100 focus:border-blue-600 print:bg-transparent print:border-black print:border-b print:[&::-webkit-calendar-picker-indicator]:hidden w-36" />.
+        </p>
+        <p>Thank you for your continued cooperation and support.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Initialize Lucide Icons
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+
+      // Print function
+      document.getElementById('printBtn').addEventListener('click', () => {
+        window.print();
+      });
+
+      // Date auto-calculation logic (Fixed Timezone issue)
+      const startDateInput = document.getElementById('startDate');
+      const replyDateInput = document.getElementById('replyDate');
+
+      startDateInput.addEventListener('change', (e) => {
+        const dateStr = e.target.value;
+        if (dateStr) {
+          // Manually parse YYYY-MM-DD to avoid timezone shift bugs
+          const [yyyyStr, mmStr, ddStr] = dateStr.split('-');
+          const date = new Date(yyyyStr, mmStr - 1, ddStr);
+          
+          // Find current week's Monday
+          const day = date.getDay();
+          const diffToMonday = day === 0 ? -6 : 1 - day;
+          const currentMonday = new Date(date);
+          currentMonday.setDate(date.getDate() + diffToMonday);
+
+          // Subtract 7 days to get previous week's Monday
+          const previousMonday = new Date(currentMonday);
+          previousMonday.setDate(currentMonday.getDate() - 7);
+
+          // Format back to YYYY-MM-DD for the input value
+          const yyyy = previousMonday.getFullYear();
+          const mm = String(previousMonday.getMonth() + 1).padStart(2, '0');
+          const dd = String(previousMonday.getDate()).padStart(2, '0');
+          
+          replyDateInput.value = `${yyyy}-${mm}-${dd}`;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
