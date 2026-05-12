@@ -14,9 +14,21 @@
   <style>
     /* Custom print adjustments */
     @media print {
-      @page { margin: 0; }
-      body { margin: 0; background-color: white; }
+      @page { margin: 2.25cm; }
+      body { margin: 2.25cm; background-color: white; }
     }
+ /* Page alignment adjustments */
+    @media print {
+  html, body {
+    height: 100%;
+  }
+
+  .print-scale {
+    transform-origin: top left;
+    page-break-inside: avoid;
+  }
+}
+    
   </style>
 </head>
 <body class="min-h-screen bg-gray-200 py-8 print:py-0 print:bg-white flex flex-col items-center">
