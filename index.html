@@ -31,7 +31,7 @@
                 page-break-inside: avoid;
                 
                 /* CRITICAL: Reduce print scale to guarantee 1-page fit with large margins */
-                zoom: 0.95; 
+                zoom: 0.85; 
             }
             
             /* Fallback scaling for Firefox */
@@ -135,8 +135,8 @@
             <img 
                 src="https://academic.unikl.edu.my/wp-content/uploads/2021/01/UniKL-Logo-01-1-e1592809336112.png" 
                 alt="UniKL Logo" 
-                class="h-20 print:h-16 object-contain"
-                onerror="this.src='https://upload.wikimedia.org/wikipedia/en/e/e0/Universiti_Kuala_Lumpur_logo.svg'; this.style.height='4rem';"
+                class="h-28 print:h-20 object-contain"
+                onerror="this.src='https://upload.wikimedia.org/wikipedia/en/e/e0/Universiti_Kuala_Lumpur_logo.svg'; this.style.height='5rem';"
             />
             <div class="text-right flex flex-col items-end">
                 <h2 class="text-xl print:text-lg font-bold uppercase underline mb-1">Acceptance Form</h2>
@@ -147,7 +147,7 @@
         </div>
 
         <!-- Introduction Paragraph -->
-        <div class="mb-4 print:mb-2 text-sm print:text-xs">
+        <div class="mt-8 mb-5 print:mt-5 print:mb-3 text-sm print:text-xs">
             <p>
                 <span class="font-semibold text-base print:text-[13px]">To : Universiti Kuala Lumpur Malaysian Institute of Industrial Technology (UniKL MITEC),</span> <br/>
                 We have received an internship placement request for the following student:
@@ -171,7 +171,7 @@
         </div>
 
         <!-- Training Session -->
-        <div class="mb-6 print:mb-3 text-sm print:text-xs">
+        <div class="mb-8 print:mb-5 text-sm print:text-xs">
             <p>
                 Industrial Training Session 
                 <select class="font-semibold bg-blue-50/50 px-1 py-0.5 focus:outline-none border-none mx-1 text-gray-400" onchange="this.classList.remove('text-gray-400'); this.classList.add('text-gray-900')">
@@ -254,7 +254,7 @@
             </div>
 
             <div class="ml-4 space-y-3 print:space-y-1">
-                <p class="font-bold text-xs print:text-[11px] uppercase tracking-tight">The student will receive the following facilities:</p>
+                <p class="font-bold text-xs print:text-[11px] tracking-tight">The student will receive the following facilities:</p>
                 <div class="pl-4 flex flex-col gap-2 print:gap-1 text-xs print:text-[11px]">
                     <div class="flex flex-wrap items-center gap-2 print:gap-1">
                         <span class="w-24 font-semibold">Allowance</span>:
